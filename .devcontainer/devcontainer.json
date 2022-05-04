@@ -1,0 +1,16 @@
+{
+"build": { 
+    "dockerfile": "../Dockerfile", 
+    "context":"../"
+    },
+"forwardPorts": [
+	8000, 8080 , 80, 3000
+],
+"mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/root/.ssh,type=bind,consistency=cached",
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached",
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.config,target=/root/.config,type=bind,consistency=cached",
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.kaggle,target=/root/.kaggle,type=bind,consistency=cached"
+],
+"extensions": ["ms-toolsai.jupyter-keymap","esbenp.prettier-vscode","dsznajder.es7-react-js-snippets"]
+}
